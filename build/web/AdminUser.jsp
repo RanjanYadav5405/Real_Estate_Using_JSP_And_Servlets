@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Page</title>
+    <title>Admin User Page</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -14,29 +14,6 @@
         crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <link rel="stylesheet" href="Dash.css">
-   <style>
-    .center-line {
-      position: absolute;
-      left: 30%;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background-color: #28a745;
-      transform: translateX(-50%);
-    }
-    
-    
-    .container-left {
-      width: 25%;
-      padding-right: 20px; /* Adjust as needed */
-    }
-
-    .container-right {
-      width: 50%;
-      padding-left: 20px; /* Adjust as needed */
-    }
-  </style>
-  
 </head>
 
 <body>
@@ -58,8 +35,8 @@
         <b>
             <ul class="nav flex-column">
                <div class="sidebar-button">
-        <img src="<%= request.getContextPath() %>/imgs/dash.png" alt="Login Icon" width="30" height="30">
-        <span>Dashboard</span>
+        <img src="<%= request.getContextPath() %>/imgs/users.png" alt="Login Icon" width="30" height="30">
+        <span>Users</span>
       </div>&nbsp;
 
       <div class="sidebar-button">
@@ -67,19 +44,6 @@
         <span>Property</span>
       </div>&nbsp;
 
-      <div class="sidebar-button">
-        <img src="<%= request.getContextPath() %>/imgs/fav.png" alt="Login Icon" width="30" height="30">
-        <span>Favourite</span>
-      </div>&nbsp;
-
-      <div class="sidebar-button">
-        <img src="<%= request.getContextPath() %>/imgs/setting.png" alt="Login Icon" width="30" height="30">
-        <span>Setting</span>
-      </div>&nbsp;
-      <div class="sidebar-button">
-        <img src="<%= request.getContextPath() %>/imgs/feedback.png" onclick="window.location.href='Feedback.jsp'" alt="Login Icon" width="30" height="30">
-        <span>Feedback</span>
-      </div>&nbsp;
       
       <div class="sidebar-button">
         <img src="<%= request.getContextPath() %>/imgs/logout.png" alt="Login Icon" width="30" height="30">
@@ -99,44 +63,67 @@
                     <h1 class="h2">HomeLand</h1>
                     <i class="fa fa-bell" style="font-size:40px"></i>
                 </div>
-      
-           <div class="container mt-5">
-  <div class="card mx-auto" style="width: 60rem; height: 30rem;">
-    <div class="card-body d-flex">
-      <div class="container-left mx-5">
-        <img src="<%= request.getContextPath() %>/imgs/Ranjan.png" class="rounded-circle" alt="Circular Image" style="width: 110px; height: 100px;">
-        <br/><br/>
-        <b style="font-size: 20px; white-space: nowrap;" class="text-dark">Ranjan Yadav</b></br>
-        &nbsp;&nbsp;&nbsp; <button type="button" style="width:7rem;" class="btn btn-primary my-5 btn-lg">Edit</button>
-      </div>
-
-      <div class="center-line"></div>
-
-      <div class="container-right">
                     <div class="container">
-              <h2>Personal Information</h2>
-                 
-              <form>
-                <div class="form-group">
-                  <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" value="<%= request.getAttribute("email") %>">
-                </div>
-                <div class="form-group">
-                  <label for="phone">Phone:</label>
-                  <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" value="<%= request.getAttribute("phone") %>">
-                </div>
-                <div class="form-group">
-                  <label for="address">Address:</label>
-                  <input type="text" class="form-control" id="address" placeholder="Enter address" value="<%= request.getAttribute("address") %>">
-                </div>
-              </form>
-            </div>
+                  <div class="row justify-content-between">
+                      <h2>Users:</h2>
+                      <button type="button" class="btn btn-primary btn-sm">Add New</button>
+                  </div><br/>
+                  <h5>All Users Members</h5>
+              </div>
 
-        </form>
-      </div>
+
+              
+      <div class="container mt-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Phone</th>
+                    <th>Password</th>
+                    <th>Confirm Password</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>ryadav081@rku.ac.in</td>
+                    <td>9122452479</td>
+                    <td>.........</td>
+                    <td>.........</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>myadav986@rku.ac.in</td>
+                    <td>8235802223</td>
+                    <td>.........</td>
+                    <td>.........</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>3</td>
+                    <td>psah098@rku.ac.in</td>
+                    <td>7023897435</td>
+                    <td>.........</td>
+                    <td>.........</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
     </div>
-  </div>
-</div>
+
             </main>
         </div>
     </div>
